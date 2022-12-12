@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agrandir ou diminuer une image en JavaScript</title>
+    <script type="text/javascript">
+      /*on va avoir une fonction pour agrandir l'image*/
+    function agrandir() {
+        var Img = document.getElementById("Img"); //variable ou on a stocke l'image
+        var width = Img.clientWidth; //variable ou on va liee l'image avec css
+        if (width == 600) {
+            alert("Vous avez atteint le niveau de zoom maximal.");/* ce message va afficher au l'utilisateur si il a 
+                                                                                                     arrivee au max*/
+        } else {
+            Img.style.width = (width + 20) + "px";
+        }
+    }
+    /*la deuxieme fonction pour diminuer la taille de l'image*/
+    function diminuer() {
+        var Img = document.getElementById("Img");// variable ou an a stocke l'image
+        var width = Img.clientWidth;
+        if (width == 40) {
+            alert("Vous avez atteint le niveau de zoom minimal.");
+        } else {
+            Img.style.width = (width - 20) + "px";
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <img src="file:///C:/Users/Admin/Downloads/fsr.png" id="Img"><!-- l'image-->
+    <p>
+      <button type="button" onclick="agrandir()">+ Agrandir</button> <!--boutton pour agrandir liee avec la fonction-->
+      <button type="button" onclick="diminuer()">- Diminuer</button> <!--boutton pour diminuer liee avec la fonction-->
+    </p>
+  </body>
+</html>
